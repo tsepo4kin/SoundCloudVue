@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h1>Sound app</h1>
+    <p>Wrapper for soundCloud for listen music</p>
   </div>
 </template>
 

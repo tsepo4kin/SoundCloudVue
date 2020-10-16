@@ -1,54 +1,55 @@
 <template>
-  <v-header>
-    <v-container>
-      <v-row>
-        header
-      </v-row>
-    </v-container>
-  </v-header>
+  <div>
+    <v-toolbar dark class="purple darken-4">
+      <router-link to="/" tag="span" style="cursor: pointer">
+        <v-toolbar-title>
+          TSPSound
+        </v-toolbar-title>
+      </router-link>
+
+      <v-spacer></v-spacer>
+
+      <v-toolbar-items>
+        <v-btn text v-for="item in menuItems" :key="item.title" :to="item.path">
+          <v-icon left>{{item.icon}}</v-icon>
+          {{item.title}}
+        </v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
+
+    <div class="purple darken-4 py-1">
+      <player></player>
+    </div>
+  </div>
 </template>
 
 <script>
+import Player from  '@/components/Player'
 export default {
 
   computed: {
     menuItems() {
-      if (this.isAuth) {
-        return [
-          {
-            title: "Catalog",
-            path: "/catalog",
-            icon: "mdi-calendar-month"
-          },
-          {
-            title: "Library",
-            path: "/library",
-            icon: "mdi-calendar-month"
-          },
-          {
-            title: "Profile",
-            path: "/profile",
-            icon: "mdi-account-box"
-          }
-        ];
-      } else {
-        return [
-          {
-            title: "SignIn",
-            path: "/signIn",
-            icon: "mdi-account-arrow-right"
-          },
-          {
-            title: "SignUp",
-            path: "/signUp",
-            icon: "mdi-account-check"
-          }
-        ];
-      }
-    },
-    isAuth() {
-      return this.$store.getters.isAuth;
+      return [
+        {
+          title: "Catalog",
+          path: "/catalog",
+          icon: "mdi-music-note-plus"
+        },
+        {
+          title: "Library",
+          path: "/library",
+          icon: "mdi-music-box-multiple-outline"
+        },
+        {
+          title: "Profile",
+          path: "/profile",
+          icon: "mdi-account-box"
+        }
+      ];
     }
+  },
+  components: {
+    Player
   }
 };
 </script>
