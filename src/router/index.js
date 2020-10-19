@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Library from "@/components/Library.vue";
 import Catalog from "@/components/Catalog.vue";
+import Profile from "@/components/Profile.vue"
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
     path: "/catalog",
     name: "Catalog",
     component: Catalog,
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: Profile,
   },
 ];
 
