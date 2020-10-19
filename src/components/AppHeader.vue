@@ -9,15 +9,8 @@
 
       <v-spacer></v-spacer>
 
-      <div class="white pa-1 rounded"
-        style="width: 40%"
-      >
-        <v-text-field
-          light
-          hide-details
-          color="black"
-          placeholder="track name"
-        >
+      <div class="white mx-1 pa-1 rounded" style="width: 40%">
+        <v-text-field light hide-details color="black" placeholder="track name">
           <template v-slot:append>
             <v-btn small icon>
               <v-icon class="title">mdi-magnify</v-icon>
@@ -28,8 +21,8 @@
 
       <v-toolbar-items>
         <v-btn text v-for="item in menuItems" :key="item.title" :to="item.path">
-          <v-icon left>{{item.icon}}</v-icon>
-          {{item.title}}
+          <v-icon left>{{ item.icon }}</v-icon>
+          {{ item.title }}
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
@@ -41,33 +34,32 @@
 </template>
 
 <script>
-import Player from  '@/components/Player'
+import Player from "@/components/Player";
 export default {
-
   computed: {
     menuItems() {
       return [
         {
           title: "Catalog",
           path: "/catalog",
-          icon: "mdi-music-note-plus"
+          icon: "mdi-music-note-plus",
         },
         {
           title: "Library",
           path: "/library",
-          icon: "mdi-music-box-multiple-outline"
+          icon: "mdi-music-box-multiple-outline",
         },
         {
           title: "Profile",
           path: "/profile",
-          icon: "mdi-account-box"
-        }
+          icon: "mdi-account-box",
+        },
       ];
-    }
+    },
   },
   components: {
-    Player
-  }
+    Player,
+  },
 };
 </script>
 
