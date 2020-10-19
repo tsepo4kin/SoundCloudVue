@@ -9,6 +9,23 @@
 
       <v-spacer></v-spacer>
 
+      <div class="white pa-1 rounded"
+        style="width: 40%"
+      >
+        <v-text-field
+          light
+          hide-details
+          color="black"
+          placeholder="track name"
+        >
+          <template v-slot:append>
+            <v-btn small icon>
+              <v-icon class="title">mdi-magnify</v-icon>
+            </v-btn>
+          </template>
+        </v-text-field>
+      </div>
+
       <v-toolbar-items>
         <v-btn text v-for="item in menuItems" :key="item.title" :to="item.path">
           <v-icon left>{{item.icon}}</v-icon>
